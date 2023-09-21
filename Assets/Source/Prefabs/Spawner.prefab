@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 06893cec523208643a91b7a393737700, type: 2}
+  - {fileID: 2100000, guid: 8e5cfd6f4313add4d92df02b031e8153, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -112,7 +112,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyTemplate: {fileID: 459270286214547607, guid: 9ad4024bf34bb2c43b58a5db322f457e, type: 3}
-  _moveDirection: {fileID: 0}
 --- !u!1 &4211117572684245750
 GameObject:
   m_ObjectHideFlags: 0
@@ -176,7 +175,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a2e4ced854db0f342bcbb8e24ed28c61, type: 2}
+  - {fileID: 2100000, guid: 8fc77c2fd36391f4ba65fa327c7fd318, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
