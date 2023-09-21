@@ -7,6 +7,8 @@ public class SpawnManager : MonoBehaviour
 {
     [SerializeField] private float _pauseBetweenSpawn = 2.0f;
 
+    [SerializeField] private int _spawnCount = 10;
+
     private Spawner[] _spawners;
 
     private WaitForSeconds _waitForSeconds;
@@ -22,29 +24,25 @@ public class SpawnManager : MonoBehaviour
         _waitForSeconds = new WaitForSeconds(_pauseBetweenSpawn);
     }
 
-    private void Update()
+    private void Start()
     {
-        if (_start == false)
+        StartSpawn(_spawnCount);  
+    }
+
+    private void StartSpawn(int spawnCount)
+    {
+        _spawnJob = StartCoroutine(Spawn(spawnCount));
+    }
+
+    private IEnumerator Spawn(int spawnCount)
+    {
+        for (int i = 0;  i < spawnCount; i++)
         {
-            StartSpawn();
-        }   
-    }
+            int value = Random.Range(0, _spawners.Length);
 
-    private void StartSpawn()
-    {
-        _start = true;
-
-        _spawnJob = StartCoroutine(Spawn());
-    }
-
-    private IEnumerator Spawn()
-    {
-        int value = Random.Range(0, _spawners.Length);
-
-        _spawners[value].SpawnEnemy();
+            _spawners[value].SpawnEnemy();
             
-        yield return _waitForSeconds;
-
-        _start = false;
+            yield return _waitForSeconds;
+        }
     }
 }

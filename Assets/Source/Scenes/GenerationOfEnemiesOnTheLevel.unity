@@ -291,6 +291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pauseBetweenSpawn: 2
+  _spawnCount: 10
 --- !u!4 &915405347
 Transform:
   m_ObjectHideFlags: 0
