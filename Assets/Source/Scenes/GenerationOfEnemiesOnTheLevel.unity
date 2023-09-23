@@ -252,7 +252,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2507173968243563971, guid: 052117cdbbc982a4b984d0f0a9746dcf, type: 3}
       propertyPath: m_Name
-      value: Spawner (1)
+      value: SpawnPoint2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 052117cdbbc982a4b984d0f0a9746dcf, type: 3}
@@ -272,7 +272,7 @@ GameObject:
   - component: {fileID: 915405347}
   - component: {fileID: 915405346}
   m_Layer: 0
-  m_Name: SpawnManager
+  m_Name: Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -291,7 +291,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pauseBetweenSpawn: 2
-  _spawnCount: 10
 --- !u!4 &915405347
 Transform:
   m_ObjectHideFlags: 0
@@ -541,7 +540,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2507173968243563971, guid: 052117cdbbc982a4b984d0f0a9746dcf, type: 3}
       propertyPath: m_Name
-      value: Spawner (2)
+      value: SpawnPoint3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 052117cdbbc982a4b984d0f0a9746dcf, type: 3}
@@ -706,7 +705,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2507173968243563971, guid: 052117cdbbc982a4b984d0f0a9746dcf, type: 3}
       propertyPath: m_Name
-      value: Spawner
+      value: SpawnPoint1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 052117cdbbc982a4b984d0f0a9746dcf, type: 3}

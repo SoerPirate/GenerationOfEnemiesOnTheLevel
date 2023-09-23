@@ -1,32 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] private Enemy _enemyTemplate;
+    [SerializeField] private float _pauseBetweenSpawn = 2.0f;
 
-    private Transform _moveDirection;
+    private SpawnPoint[] _spawners;
 
-    private Vector3 _spawnerPosition;
-    private Vector3 _moveDirectionPosition;
-    private Vector3 _enemyMoveDirection;
+    private WaitForSeconds _waitForSeconds;
+
+    private Coroutine _spawnJob;
+
+    private bool _start = false;
 
     private void Awake()
     {
-        _moveDirection = gameObject.GetComponentInChildren<MoveDirection>().transform;
+        _spawners = GetComponentsInChildren<SpawnPoint>();
 
-        _spawnerPosition = transform.position;
-        _moveDirectionPosition = _moveDirection.position;
-
-        _enemyMoveDirection = (_moveDirectionPosition - _spawnerPosition).normalized;
+        _waitForSeconds = new WaitForSeconds(_pauseBetweenSpawn);
     }
 
-    public void SpawnEnemy()
+    private void Start()
     {
-        Enemy createdEnemy = Instantiate(_enemyTemplate, _spawnerPosition, Quaternion.identity);
+        StartSpawn();  
+    }
 
-        createdEnemy.Init(_enemyMoveDirection);
+    private void StartSpawn()
+    {
+        _spawnJob = StartCoroutine(Spawn());
+    }
+
+    private IEnumerator Spawn()
+    {
+        int value = Random.Range(0, _spawners.Length);
+
+        _spawners[value].SpawnEnemy();
+
+        yield return _waitForSeconds;
+
+        StartSpawn();
     }
 }
